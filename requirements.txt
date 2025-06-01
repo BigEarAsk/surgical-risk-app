@@ -25,7 +25,7 @@ blinker==1.8.2
 blosc==1.11.1
 bounded-pool-executor==0.0.3
 cachetools==5.3.1
-catboost==1.2.3
+catboost
 category-encoders==2.6.3
 causalml==0.15.2
 certifi==2023.7.22
