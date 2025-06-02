@@ -5,7 +5,7 @@ econml==0.15.1
 joblib==1.4.0
 lightgbm==4.6.0
 matplotlib==3.7.2
-ngboost==0.5.6
+ngboost
 numpy==1.25.2
 pandas==2.2.3
 pygam==0.9.1
