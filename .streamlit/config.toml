@@ -1,0 +1,5 @@
+[server]
+headless = true
+enableCORS = false
+enableXsrfProtection = false
+fileWatcherType = "none"   # 或改为 "poll" 以支持热重载且不占 inotify
