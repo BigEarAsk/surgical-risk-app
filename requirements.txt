@@ -18,3 +18,4 @@ statsmodels
 xgboost
 xlrd
 openpyxl
+deap==1.4.1
