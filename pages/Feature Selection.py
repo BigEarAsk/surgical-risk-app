@@ -7,7 +7,12 @@ render_lang_toggle(location="sidebar")  # ✅ 这一行保证按钮
 # st.title("1️⃣ Feature Selection")
 st.title(t("feature_title"))
 
-df = st.session_state.train_df
+if "train_df" not in st.session_state:
+    # st.warning("⬅️ Please upload data on the Home page first.")
+    st.warning(t("warning"))
+    
+else:
+    df = st.session_state.train_df
 
 var_names = df.columns.tolist()
 
