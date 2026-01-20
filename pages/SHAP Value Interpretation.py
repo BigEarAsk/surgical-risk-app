@@ -32,7 +32,8 @@ else:
 
     st.pyplot(fig)
 
-    st.info("The shap figure has finished!")
+    # st.info("The shap figure has finished!")
+    st.info(t("shap_finish"))
 
     buf = io.BytesIO()
     fig.savefig(buf, format="png", dpi=300, bbox_inches="tight")
@@ -40,7 +41,7 @@ else:
 
     # ✅ 下载按钮
     st.download_button(
-        label="📥 Download Shap plot as PNG",
+        label=t("shap_download"),
         data=buf,
         file_name="Shap_plot.png",
         mime="image/png"
