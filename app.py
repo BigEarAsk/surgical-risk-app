@@ -27,6 +27,7 @@ init_i18n()
 
 # st.title("🧠 Surgical Complication Risk Prediction Platform")
 st.title(t("app_title"))
+st.info(t("app_site"))
 # st.sidebar.page_link("pages/Model_Training.py", label="Model Training")
 # st.sidebar.page_link("pages/ATE.py", label="Average Treatment Effect (ATE)")
 # st.sidebar.page_link("pages/Calibration_plot.py", label="Calibration Curve")
@@ -136,7 +137,7 @@ if uploaded_file_training and uploaded_file_validation:
     # target_var = st.sidebar.selectbox("🎯 Outcome variable (binary)", df.columns)
     # treatment_vars = st.sidebar.multiselect("🛠️ Modifiable surgical variables", df.columns.drop(target_var))
 
-    
 else:
     # st.info("Please upload your data to get started.")
     st.info(t("app_info"))
+
