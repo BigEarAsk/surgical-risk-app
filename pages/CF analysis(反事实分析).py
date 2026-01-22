@@ -35,8 +35,9 @@ else:
     # drop_col = list(set(st.session_state.df_combined.columns) - set(st.session_state.X_combined.columns))
     data = st.session_state.X_combined
     data[st.session_state.target_var] = st.session_state.df_combined[st.session_state.target_var]
+    columns = list(st.session_state.X_train.columns)
     counterfact_df = get_res(selected_models_test,st.session_state.models_train,
-                             data,st.session_state.continuous_features,
+                             data,columns,st.session_state.continuous_features,
                              st.session_state.selected_features_change,st.session_state.target_var)
 
     st.dataframe(counterfact_df)
