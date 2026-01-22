@@ -1,7 +1,7 @@
 # i18n.py
 TEXT = {
     "en": {
-        "app_title": "🧠 Surgical Complication Risk Prediction Platform",
+        "app_title": "🧠 Modeling Platform for Postoperative Complication Risk Prediction",
         "user_guide": "📘 User Guide (Click to Expand)",
         "guide_title_1": "### 1. Upload Your Data File",
         "guide_supported": "- **Supported format**: `.xlsx`",
@@ -91,7 +91,7 @@ TEXT = {
         "feature_finish":"The final selected features are：",
     },
     "zh": {
-        "app_title": "🧠 手术并发症风险预测平台",
+        "app_title": "🧠 术后并发症风险预测模型建模平台",
         "user_guide": "📘 用户指南（点击展开）",
         "guide_title_1": "### 1. 上传数据文件",
         "guide_supported": "- **支持格式**：`.xlsx`",
