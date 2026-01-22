@@ -14,7 +14,7 @@ seed = 500
 random.seed(seed)
 np.random.seed(seed)
 
-def get_res(selected_test_name,models,X_combined,continue_feature,
+def get_res(selected_test_name,models,X_combined,df_combined,continue_feature,
             features_to_vary,target_name,total_CFs=3):
 
     model = models[selected_test_name]
@@ -24,7 +24,7 @@ def get_res(selected_test_name,models,X_combined,continue_feature,
 
     model = dice_ml.Model(model=model,backend='sklearn')
     dice = Dice(data,model)
-    X_0 = X_combined.loc[X_combined[target_name] == 1]
+    X_0 = df_combined.loc[df_combined[target_name] == 1]
     id = X_0.index[random.randint(0,len(X_0.index))]
 
     # query_instance = X_combined.loc[[id]].to_dict()  # get random sample
