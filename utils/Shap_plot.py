@@ -10,7 +10,7 @@ def draw_combine(X_combined,shap_values=None,sign = True):
     # from matplotlib import rcParams
 
     if sign:
-        shap_values = shap_values[1]  # 仅限二分类的第1类（正类）
+        shap_values = shap_values[:,:,1]  # 仅限二分类的第1类（正类）
 
     fig, ax1 = plt.subplots(figsize=(10, 8), dpi=300)
 
