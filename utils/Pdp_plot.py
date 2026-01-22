@@ -38,7 +38,7 @@ def draw_pdp(selected_test_name,models,X_combined,feature):
     if selected_test_name in ["Random Forest","Extra Tree","Gradient Boosting","Decision Tree"]:
         explainer = shap.TreeExplainer(model)
         shap_values = explainer.shap_values(X_combined)
-        shap_values = np.array(shap_values)[1]
+        shap_values = np.array(shap_values)[:,:,1]
 
         # fig = draw_combine(X_combined,shap_values=shap_values)
     else:
