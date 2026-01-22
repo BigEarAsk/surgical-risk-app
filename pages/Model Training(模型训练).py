@@ -70,7 +70,7 @@ else:
         st.info(t("waiting"))
         # st.info("Please waiting for a moment...\nThe selected models are being trained...")
         
-    results, models = train_model(X, y,X_val,y_val,st.session_state.selected_models)
+    results, models = train_model(st.session_state.X_train, st.session_state.y_train,st.session_state.X_val,st.session_state.y_val,st.session_state.selected_models)
     st.dataframe(results.style.highlight_max(axis=0))
     st.session_state.models_train = models
     
