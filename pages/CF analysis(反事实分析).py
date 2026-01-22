@@ -32,8 +32,10 @@ else:
     # st.info("The Counterfact samples are generating...")
     st.info(t("counterfact_waiting"))
 
+    drop_col = list(set(st.session_state.df_combined.columns) - set(st.session_state.X_combined.columns))
+    
     counterfact_df = get_res(selected_models_test,st.session_state.models_train,
-                             st.session_state.df_combined,st.session_state.continuous_features,
+                             st.session_state.df_combined.drop(drop_col),st.session_state.continuous_features,
                              st.session_state.selected_features_change,st.session_state.target_var)
 
     st.dataframe(counterfact_df)
