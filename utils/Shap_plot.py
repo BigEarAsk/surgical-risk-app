@@ -14,6 +14,7 @@ def draw_combine(X_combined,shap_values=None,sign = True):
 
     fig, ax1 = plt.subplots(figsize=(10, 8), dpi=300)
 
+    print(shap_values.shape, len(X_combined), X_combined.columns)
     # 第一个 SHAP dot 图
     shap.summary_plot(shap_values, X_combined, feature_names=X_combined.columns, plot_type="dot", show=False, color_bar=True)
     ax1 = plt.gca()
