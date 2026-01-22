@@ -33,7 +33,7 @@ else:
     st.info(t("counterfact_waiting"))
 
     counterfact_df = get_res(selected_models_test,st.session_state.models_train,
-                             st.session_state.X_combined,st.session_state.df_combined,st.session_state.continuous_features,
+                             st.session_state.df_combined,st.session_state.continuous_features,
                              st.session_state.selected_features_change,st.session_state.target_var)
 
     st.dataframe(counterfact_df)
