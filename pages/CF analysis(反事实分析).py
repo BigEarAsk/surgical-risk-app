@@ -42,8 +42,8 @@ else:
 
     if counterfact_df is None or counterfact_df.empty:
         st.info(t("counterfact_none"))
-        
-    st.dataframe(counterfact_df)
+    else:
+        st.dataframe(counterfact_df)
 
     # st.info("The Counterfact samples has generated!")
-    st.info(t("counterfact_finish"))
+        st.info(t("counterfact_finish"))
