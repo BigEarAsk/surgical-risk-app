@@ -40,6 +40,9 @@ else:
                              data,columns,st.session_state.continuous_features,
                              st.session_state.selected_features_change,st.session_state.target_var)
 
+    if counterfact_df is None or counterfact_df.empty:
+        st.info(t("counterfact_none"))
+        
     st.dataframe(counterfact_df)
 
     # st.info("The Counterfact samples has generated!")
