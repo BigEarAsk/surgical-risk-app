@@ -36,12 +36,17 @@ else:
     data = st.session_state.X_combined
     data[st.session_state.target_var] = st.session_state.df_combined[st.session_state.target_var]
     columns = list(st.session_state.X_train.columns)
+
     counterfact_df = get_res(selected_models_test,st.session_state.models_train,
                              data,columns,st.session_state.continuous_features,
                              st.session_state.selected_features_change,st.session_state.target_var)
 
-    if counterfact_df is None or counterfact_df.empty:
+    if isinstance(counterfact_df, str):
+        st.info(counterfact_df)
+        
+    elif counterfact_df is None or counterfact_df.empty:
         st.info(t("counterfact_none"))
+
     else:
         st.dataframe(counterfact_df)
 
