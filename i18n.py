@@ -1,7 +1,7 @@
 # i18n.py
 TEXT = {
     "en": {
-        "app_title": "🧠 Modeling Platform for Postoperative Complication Risk Prediction",
+        "app_title": "🧠 Surgical Complication Risk Prediction Platform",
         "user_guide": "📘 User Guide (Click to Expand)",
         "guide_title_1": "### 1. Upload Your Data File",
         "guide_supported": "- **Supported format**: `.xlsx`",
@@ -79,6 +79,7 @@ TEXT = {
         "counterfact_change":"Select features to be changed",
         "counterfact_waiting":"The Counterfact samples are generating...",
         "counterfact_finish":"The Counterfact samples has generated!",
+        "counterfact_none":"No feasible counterfactual samples were identified under the current feature selection. Please consider adjusting the selected modifiable features.",
         # DCA:
         "dca_title":"1️⃣ DCA plot",
         "dca_waiting":"The DCA figure is drawing...",
@@ -91,7 +92,7 @@ TEXT = {
         "feature_finish":"The final selected features are：",
     },
     "zh": {
-        "app_title": "🧠 术后并发症风险预测模型建模平台",
+        "app_title": "🧠 手术并发症风险预测平台",
         "user_guide": "📘 用户指南（点击展开）",
         "guide_title_1": "### 1. 上传数据文件",
         "guide_supported": "- **支持格式**：`.xlsx`",
@@ -153,6 +154,7 @@ TEXT = {
         "counterfact_change":"选择要研究的变量",
         "counterfact_waiting":"反事实样本正在生成...",
         "counterfact_finish":"反事实样本已生成完毕！",
+        "counterfact_none":"在当前特征选择下，未找到可行的反事实样本。请尝试调整可变特征组合。",
         "dca_title":"1️⃣ 决策曲线分析图绘制",
         "dca_waiting":"决策曲线分析图正在绘制...",
         "dca_finish":"决策曲线分析图绘制完成！",
