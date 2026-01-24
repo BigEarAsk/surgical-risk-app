@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+from dice_ml.utils.exception import UserConfigValidationException
 
 seed = 500
 random.seed(seed)
@@ -36,13 +37,22 @@ def get_res(selected_test_name,models,X_combined,columns,continue_feature,
         #                                 X_combined.loc[[id],X_combined.columns[:-1]], total_CFs=total_CFs, 
         #                                 features_to_vary=features_to_vary,)
         
-        counterfactuals = dice.generate_counterfactuals(
+        try:
+    # 可能抛出 UserConfigValidationException 的代码
+            counterfactuals = dice.generate_counterfactuals(
                                         X_combined.loc[[id],columns], total_CFs=total_CFs, 
                                         features_to_vary=features_to_vary,)
 
-        counterfactuals_df = counterfactuals.cf_examples_list[0].final_cfs_df
-        counterfactuals_df.reset_index(drop=True, inplace=True)
+            counterfactuals_df = counterfactuals.cf_examples_list[0].final_cfs_df
+            counterfactuals_df.reset_index(drop=True, inplace=True)
 
-        return counterfactuals_df
+            return counterfactuals_df
+        except UserConfigValidationException as e:
+            msg = str(e)
 
-        
+            if "No counterfactuals found" in msg:
+                # ✅ 真正“无解”的情况
+                return None
+            else:
+                # ❌ 配置错误，必须暴露
+                return msg
