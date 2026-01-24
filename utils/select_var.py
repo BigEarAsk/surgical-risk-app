@@ -15,8 +15,10 @@ from sklearn.feature_selection import RFE
 from tqdm import tqdm
 
 import random
+
 random.seed(200)
 np.random.seed(200)
+a = np.random.default_rng(200)
 
 # grid search for genetic algorithm
 def grid_search(param_grid,X,y):
@@ -41,7 +43,8 @@ def grid_search(param_grid,X,y):
     creator.create("Individual", list, fitness=creator.FitnessMax)
 
     toolbox = base.Toolbox()
-    toolbox.register("attr_bool", lambda: np.random.randint(0, 2))
+    # toolbox.register("attr_bool", lambda: np.random.randint(0, 2))
+    toolbox.register("attr_bool", lambda: int(a.integers(0,2)))
     toolbox.register("individual", tools.initRepeat, creator.Individual, toolbox.attr_bool, n=len(info_gain))
     toolbox.register("population", tools.initRepeat, list, toolbox.individual)
     
