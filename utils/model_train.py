@@ -271,7 +271,7 @@ def find_params(X,y,selected_models_id):
         model = models[model_name]
         param = params_dict[model_name]
 
-        Xtrain, Xtest, Ytrain, Ytest = train_test_split(X,y,test_size=0.2)
+        Xtrain, Xtest, Ytrain, Ytest = train_test_split(X,y,test_size=0.2,random_state=42)
 
         best_param = search(Xtrain,Ytrain,param,model)
         best_params[model_name] = best_param
@@ -325,9 +325,9 @@ def train_model(X,y,X_val,y_val,selected_models):
     knn = KNeighborsClassifier(**best_params['knn']) if best_params.get('knn') is not None else None
     Lgb = lgb.LGBMClassifier(**best_params['lgb']) if best_params.get('lgb') is not None else None
     rotation = Pipeline([
-        ('pca', PCA(n_components = best_params['roration']['pca__n_components'])),  
-        ('rf', RandomForestClassifier(n_estimators = best_params['roration']['rf__n_estimators'], 
-                                      max_depth = best_params['roration']['rf__max_depth']))  
+        ('pca', PCA(n_components = best_params['rotation']['pca__n_components'])),  
+        ('rf', RandomForestClassifier(n_estimators = best_params['rotation']['rf__n_estimators'], 
+                                      max_depth = best_params['rotation']['rf__max_depth']))  
     ]) if best_params.get('rotation') is not None else None
     xgboost = XGBClassifier(**best_params['xgboost']) if best_params.get('xgboost') is not None else None
     rf = RandomForestClassifier(**best_params['rf']) if best_params.get('rf') is not None else None
