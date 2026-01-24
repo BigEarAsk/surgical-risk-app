@@ -76,6 +76,7 @@ svm_param_dict = {
         'C':[3.,7.,10.],
         'kernel': ['linear', 'poly', 'rbf', 'sigmoid'],
         'degree':[3,5],
+        'probability':True
     }
 
 decision_tree_param_dict = {
