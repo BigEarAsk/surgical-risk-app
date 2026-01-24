@@ -2,9 +2,14 @@ import streamlit as st
 import pandas as pd
 from utils.model_train import train_model
 from i18n import TEXT
+import random
+import numpy as np
 # from utils.shap_utils import run_shap
 # from utils.counterfactual import run_counterfactual
 # from utils.causal_analysis import run_causal_analysis
+
+random.seed(100)
+np.random.seed(100)
 
 # streamlit run /home/bigearask/python_code/文博网页设计/app.py
 st.set_page_config(page_title="Surgical Risk Predictor", layout="wide")
