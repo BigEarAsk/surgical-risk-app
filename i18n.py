@@ -32,7 +32,7 @@ TEXT = {
         "app_select_continue":"Select all continuous features",
         "app_data":"📊 Data Preview:",
         "app_info":"Please upload your data to get started.",
-        "app_site":"If you use our site, please cite the reference: Li, W., Wang, B., Li, T. et al. A Causal and interpretable machine learning framework for postcranioplasty risk prediction and surgical decision support. npj Digit. Med. (2026).",
+        "app_site":"If you use our site, please cite the following reference: ",
 
         # Model Training:
         "training_title":"1️⃣ Multi-Model Training",
@@ -170,6 +170,6 @@ TEXT = {
         "app_select_continue":"挑选出所有连续变量",
         "app_data":"📊 数据预览:",
         "app_info":"请从上传数据开始",
-        "app_site":"如果你使用了我们的网页，请引用我们的论文: Li, W., Wang, B., Li, T. et al. A Causal and interpretable machine learning framework for postcranioplasty risk prediction and surgical decision support. npj Digit. Med. (2026).",
+        "app_site":"如果你使用了我们的网页，请引用我们下面的论文: ",
     }
 }
