@@ -77,6 +77,12 @@ st.info(t("app_site"))
 #        - Estimate Average Treatment Effect (ATE)
 #     """)
 
+st.markdown( """
+Li, W., Wang, B., Li, T. *et al*. A Causal and Interpretable Machine Learning Framework for Postcranioplasty Risk Prediction and Surgical Decision Support.*npj Digital Medicine* (2026).  
+🔗  https://doi.org/10.1038/s41746-026-02370-6
+""",
+unsafe_allow_html=True)
+
 with st.expander(t("user_guide")):
     st.markdown("\n".join([
         t("guide_title_1"),
